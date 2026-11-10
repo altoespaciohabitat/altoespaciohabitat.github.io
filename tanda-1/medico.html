@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Médica Country · Alto Espacio Hábitat</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Médica Country: consultorios y clínicas en propiedad en la zona Country de Guadalajara. Plano interactivo, esquemas de pago y calculadora de renta vs. compra.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23111111'/%3E%3Cg transform='translate(7 18) scale(0.19)' fill='%23F5F5F3' stroke='%23F5F5F3'%3E%3Cpath d='M95 6 L6 140' stroke-width='9' fill='none'/%3E%3Cpath d='M95 6 L176 140' stroke-width='16' fill='none'/%3E%3Crect x='160' y='0' width='95' height='12' stroke='none'/%3E%3Crect x='162' y='66' width='93' height='12' stroke='none'/%3E%3Crect x='196' y='132' width='59' height='12' stroke='none'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<!-- Ejes del plano (decorativos) -->
+<div class="axes" aria-hidden="true"><div class="axes-in"><span><b>A</b></span><span><b>B</b></span><span><b>C</b></span><span><b>D</b></span></div></div>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="index.html" aria-label="Alto Espacio Hábitat, inicio"><svg class="ae-mark" viewBox="0 0 260 145" aria-hidden="true" focusable="false"><path class="ae-l" d="M95 6 L6 140" pathLength="1"/><path class="ae-r" d="M95 6 L176 140" pathLength="1"/><rect class="ae-b" x="160" y="2" width="95" height="7"/><rect class="ae-b" x="162" y="69" width="93" height="7"/><rect class="ae-b" x="196" y="135" width="59" height="7"/></svg><span class="logo-txt"><span>ALTO ESPACIO</span><small>HÁBITAT</small></span></a>
+    <nav class="links" aria-label="Unidades de negocio">
+      <a href="medico.html" aria-current="page"><i>01</i>Médico</a>
+      <a href="horizontal.html"><i>02</i>Horizontal</a>
+      <a href="vertical.html"><i>03</i>Vertical</a>
+    </nav>
+    <a class="btn solid wa-link wa-top" data-msg="general" href="#contacto" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</header>
+
+<main>
+  <!-- Encabezado de la unidad -->
+  <section id="consultorios" class="uhero glow">
+    <div class="wrap uhero-grid">
+      <div class="uhero-copy">
+        <p class="crumbs"><a href="index.html">Inicio</a><span>/</span><span>Médico</span></p>
+        <p class="eyebrow big">Proyecto destacado · Consultorios médicos</p>
+        <h1 class="h2 caps">Médica Country</h1>
+        <p class="lede">Torre médica de nueva construcción en Av. Circunvalación Jorge Álvarez del Castillo 1578, zona Country, Guadalajara. Consultorios y clínicas en propiedad para especialistas que hoy pagan renta.</p>
+        <div class="mc-acts">
+          <a class="btn solid" href="#plano">Elegir consultorio <span class="arr">↓</span></a>
+          <a class="btn" href="#renta-compra">Renta vs. compra <span class="arr">↓</span></a>
+        </div>
+      </div>
+      <div class="uhero-art">
+        <svg id="tcSvg" class="dr" viewBox="0 0 400 640" role="img" aria-label="Dibujo ilustrativo de la torre con un consultorio marcado"></svg>
+        <p class="caption">Imagen ilustrativa. Los renders oficiales se publicarán en cuanto el desarrollador los libere.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Datos clave -->
+  <section class="sec" aria-labelledby="factsT">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">El proyecto</p>
+        <h2 class="h2" id="factsT">Lo esencial de Médica Country.</h2>
+      </div>
+      <div class="facts rv">
+        <article class="fact">
+          <p class="step-k">Ubicación</p>
+          <h3 class="step-big">Zona Country</h3>
+          <p>Av. Circunvalación Jorge Álvarez del Castillo 1578. Una de las zonas con mayor concentración de consultorios de especialidad en Guadalajara, con vista al campo de golf del Country Club desde el lado poniente.</p>
+        </article>
+        <article class="fact">
+          <p class="step-k">Disponibilidad</p>
+          <h3 class="step-big">32 consultorios</h3>
+          <p>En cuatro plantas: 22 consultorios de 15 a 33 m², 8 clínicas de 70 a 105 m² y 2 clínicas con terraza de 151 y 175 m². Además, un área de amenidades de 193.83 m².</p>
+        </article>
+        <article class="fact">
+          <p class="step-k">Superficie</p>
+          <h3 class="step-big">15 a 33 m²</h3>
+          <p>Consultorios Start, Plus y Especializado. Para clínicas, superficies de 70 a 175 m².</p>
+        </article>
+        <article class="fact">
+          <p class="step-k">Precio</p>
+          <h3 class="step-big">Desde $1.22 M</h3>
+          <p>Precio por m² según la superficie: $81,289 en menos de 17 m², $78,044 de 17 a 24 m², $74,327 de 25 a 33 m² y $64,865 en clínicas de 34 m² o más.</p>
+        </article>
+        <article class="fact">
+          <p class="step-k">Entrega</p>
+          <h3 class="step-big">Diciembre 2029</h3>
+          <p>Entrega estimada en obra gris. Apartado desde $50,000 y seis esquemas de pago, con hasta 17 % de descuento de contado.</p>
+        </article>
+        <article class="fact">
+          <p class="step-k">Para quién</p>
+          <h3 class="step-big">De inquilino a propietario</h3>
+          <p>Elija su consultorio en el plano y compare cuántos años de renta equivalen a su precio.</p>
+          <a class="btn" href="#plano">Ver el plano <span class="arr">↓</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec mc-sec" aria-label="Plano interactivo">
+    <!-- Médica Country: plano interactivo con planta oficial, ficha, esquemas de pago e inventario -->
+    <div class="wrap mc mc-first" id="plano">
+      <div class="sec-head rv">
+        <p class="eyebrow">Plano interactivo</p>
+        <h2 class="h2">Elija su consultorio en el plano.</h2>
+        <p class="lede">Seleccione una planta y toque cualquier consultorio para ver su superficie, su vista, su precio de lista y cómo puede quedar terminado.</p>
+      </div>
+
+      <div class="mc-panel rv">
+        <div class="mc-top">
+          <div><span class="mc-k">Planta</span><div class="fbar" id="mcFloors" role="group" aria-label="Planta"></div></div>
+          <div><span class="mc-k">Plano</span><div class="fbar" id="mcViewSw" role="group" aria-label="Tipo de plano">
+            <button type="button" class="chip" data-v="dib" aria-pressed="true">Esquema</button>
+            <button type="button" class="chip" data-v="ofi" aria-pressed="false">Planta oficial</button>
+          </div></div>
+        </div>
+        <div class="mc-legend" id="mcLegend"></div>
+        <div class="mc-planwrap" id="mcPlanWrap"><svg id="mcPlan" viewBox="-60 0 1900 1100" role="img" aria-label="Plano de la planta"></svg></div>
+        <p class="fine" id="mcNote"></p>
+      </div>
+
+      <div class="mc-unit rv" aria-live="polite">
+        <div class="mc-info">
+          <p class="eyebrow" id="mcFloor"></p>
+          <h3 id="mcName"></h3>
+          <div class="tags" id="mcTags"></div>
+          <dl class="mc-dl" id="mcData"></dl>
+          <p class="hint" id="mcViewTxt"></p>
+          <div class="mc-acts">
+            <a class="btn solid wa-link" data-msg="unit" href="#contacto" target="_blank" rel="noopener">Solicitar cotización oficial <span class="arr">→</span></a>
+            <a class="btn" href="#renta-compra">Renta vs. compra <span class="arr">↓</span></a>
+          </div>
+        </div>
+        <div class="mc-media">
+          <div class="fbar" id="mcModes" role="group" aria-label="Vista del consultorio"></div>
+          <div id="mcModeBody"></div>
+        </div>
+      </div>
+
+      <div class="mc-pay rv">
+        <p class="eyebrow">Esquemas de pago</p>
+        <h3 class="h3" id="mcPayT"></h3>
+        <div class="tw"><table class="pt"><thead><tr><th>Esquema</th><th>Descuento</th><th>Precio final</th><th>A la firma</th><th>Durante la obra</th><th>Escritura</th></tr></thead><tbody id="mcPay"></tbody></table></div>
+        <p class="fine">Cotización informativa, no vinculante. Precios calculados con el precio por m² vigente según la superficie, sujetos a cambio y a disponibilidad. Mensualidades de obra calculadas en partes iguales hasta noviembre de 2029. Apartado sugerido: $50,000, que se descuenta del pago a la firma. Entrega estimada en diciembre de 2029, en obra gris.</p>
+      </div>
+
+      <div class="mc-block rv">
+        <p class="eyebrow">Tipos de consultorio</p>
+        <div class="mc-types" id="mcTypes"></div>
+      </div>
+
+      <div class="mc-block rv">
+        <p class="eyebrow">Vistas desde la torre</p>
+        <div class="mc-views">
+          <div><b>Poniente · avenida</b><p>Campo de golf del Country Club a unos 700 m, torres de Providencia y la Sierra de la Primavera al fondo. Es la vista más abierta de la torre.</p></div>
+          <div><b>Norte</b><p>La ciudad hacia Constitución y Zapopan, avenidas arboladas y cerros en el horizonte.</p></div>
+          <div><b>Oriente</b><p>Jardines del Country y Niños Héroes: zona residencial arbolada y horizonte abierto hacia el noreste.</p></div>
+          <div><b>Sur · Mar Mármara</b><p>Lomas del Country y Chapultepec Country. Una torre vecina de unos 13 niveles cubre parte de la vista.</p></div>
+        </div>
+        <p class="fine">Vistas aproximadas, revisadas en Google Earth a la altura de los niveles altos. En los niveles bajos predomina la copa de los árboles.</p>
+      </div>
+
+      <details class="mc-inv rv">
+        <summary>Inventario disponible · 32 consultorios</summary>
+        <div class="inv-in">
+          <div class="filters">
+            <select id="fPiso" aria-label="Filtrar por planta"><option value="">Todas las plantas</option></select>
+            <select id="fTipo" aria-label="Filtrar por tipo"><option value="">Todos los tipos</option><option value="start">Start</option><option value="plus">Plus</option><option value="especializado">Especializado</option><option value="clinica">Clínica Integral</option></select>
+            <select id="fVent" aria-label="Filtrar por ventana"><option value="">Con y sin ventana</option><option value="Sí">Con ventana</option><option value="No (interior)">Interiores</option></select>
+            <select id="fOri" aria-label="Filtrar por vista"><option value="">Todas las vistas</option><option value="O">Poniente (golf)</option><option value="N">Norte</option><option value="E">Oriente</option><option value="S">Sur</option></select>
+            <span class="inv-sum" id="invSum"></span>
+          </div>
+          <div class="inv-tw"><table class="it"><thead><tr><th data-k="id">Consultorio</th><th data-k="piso">Planta</th><th data-k="tipo">Tipo</th><th class="r" data-k="m2">m²</th><th data-k="orient">Vista</th><th data-k="ventana">Ventana</th><th class="r" data-k="precio">Precio de lista</th></tr></thead><tbody id="invTb"></tbody></table></div>
+          <p class="fine">Toque una fila para verla en el plano. Disponibilidad sujeta a confirmación.</p>
+        </div>
+      </details>
+
+      <p class="fine">Imágenes y recorridos ilustrativos generados con IA a partir de las plantas oficiales. Los consultorios se entregan en obra gris; mobiliario, equipo y acabados no incluidos. Medidas aproximadas, sujetas a los planos con cotas del desarrollador.</p>
+    </div>
+  </section>
+
+  <!-- Calculadora -->
+  <section id="renta-compra" class="sec calc">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">Renta vs. compra</p>
+        <h2 class="h2">Calcule cuánto le cuesta seguir rentando.</h2>
+        <p class="lede">El cálculo usa el consultorio que eligió en el plano. Ingrese su renta mensual actual y el resultado se actualiza al instante.</p>
+      </div>
+      <div class="calc-grid rv">
+        <div class="calc-in">
+          <div class="field">
+            <span class="flabel">Consultorio seleccionado</span>
+            <div class="cu"><div id="cuImg" class="cu-crop"></div><div><b id="cuName">—</b><span id="cuMeta"></span></div></div>
+            <a class="link-btn" href="#plano">Elegir otro en el plano ↑</a>
+          </div>
+          <div class="field">
+            <label for="rent">Renta mensual actual</label>
+            <div class="money"><span>$</span><input id="rent" type="number" inputmode="numeric" min="0" step="500" value="11600"></div>
+            <p class="hint" id="rentHint">Referencia de mercado en la zona Country: de $550 a $900 por m² al mes.</p>
+            <button type="button" class="link-btn" id="rentAvg">Usar promedio de la zona</button>
+          </div>
+        </div>
+        <div class="calc-out" aria-live="polite">
+          <div class="rows">
+            <div class="row"><span>Precio de lista del consultorio</span><b id="rPrice">$1,248,000</b></div>
+            <div class="row"><span>Renta anual</span><b id="rYear">$139,200</b></div>
+          </div>
+          <div class="big-res">
+            <div class="num"><span id="rYears">9.0</span><small>años</small></div>
+            <p id="rText">de renta equivalen al precio de lista del consultorio elegido.</p>
+          </div>
+          <div class="chart">
+            <p class="chart-k">Renta acumulada vs. precio</p>
+            <div class="bars" id="bars">
+              <div class="bar"><em></em></div>
+              <div class="bar"><em></em></div>
+              <div class="bar"><em></em></div>
+              <div class="price-line" id="priceLine"><span>Precio</span></div>
+            </div>
+            <div class="bar-labels"><span>5 años</span><span>10 años</span><span>15 años</span></div>
+            <div class="legend"><span><i></i>Renta pagada</span><span><i class="k"></i>Renta acumulada superior al precio</span><span><i class="d"></i>Precio del consultorio</span></div>
+          </div>
+          <a class="btn solid wa-link" id="calcWa" data-msg="calc" href="#contacto" target="_blank" rel="noopener">Solicitar análisis completo por WhatsApp <span class="arr">→</span></a>
+          <p class="fine">Cálculo ilustrativo con fines informativos. No incluye IVA, gastos notariales y de escrituración, mantenimiento ni incrementos de renta. Precios sujetos a cambio sin previo aviso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Otras unidades de negocio -->
+  <section class="sec others" aria-labelledby="othT">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">Otras unidades de negocio</p>
+        <h2 class="h2" id="othT">Conozca nuestras otras unidades.</h2>
+      </div>
+      <nav class="units rv" aria-label="Otras unidades de negocio">
+      <a class="ucard" href="horizontal.html" data-b="house">
+        <span class="u-tag">Terrenos y casas</span>
+        <span class="u-title">Horizontal</span>
+        <span class="u-sub">Terrenos para construir y casas listas para habitar</span>
+        <span class="circ" aria-hidden="true">↗</span>
+      </a>
+      <a class="ucard" href="vertical.html" data-b="apts">
+        <span class="u-tag">Departamentos</span>
+        <span class="u-title">Vertical</span>
+        <span class="u-sub">Departamentos para habitar o invertir</span>
+        <span class="circ" aria-hidden="true">↗</span>
+      </a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="sec contact">
+    <div class="contact-grain" aria-hidden="true"></div>
+    <div class="wrap contact-grid">
+      <div class="rv">
+        <p class="pill">Contacto · Alto Espacio Hábitat</p>
+        <h2 style="margin-top:22px">Espacios que te eligen.</h2>
+        <p class="lede">Seleccione su área de interés y escríbanos. Le responderemos por WhatsApp con información y precios.</p>
+      </div>
+      <form class="pick rv" id="pickForm">
+        <fieldset>
+          <legend>Área de interés</legend>
+          <label class="opt"><input type="radio" name="int" id="intC" value="consultorio" checked> Consultorio en Médica Country</label>
+          <label class="opt"><input type="radio" name="int" id="intH" value="casa"> Casa o terreno</label>
+          <label class="opt"><input type="radio" name="int" id="intV" value="depa"> Departamento</label>
+        </fieldset>
+        <a class="btn wa-link" id="pickWa" data-msg="consultorio" href="#contacto" target="_blank" rel="noopener">Contactar por WhatsApp <span class="arr">→</span></a>
+        <p class="wa-num">WhatsApp: <b id="waNum">número por confirmar</b></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <a class="logo" href="index.html" aria-label="Alto Espacio Hábitat, inicio"><svg class="ae-mark" viewBox="0 0 260 145" aria-hidden="true" focusable="false"><path class="ae-l" d="M95 6 L6 140" pathLength="1"/><path class="ae-r" d="M95 6 L176 140" pathLength="1"/><rect class="ae-b" x="160" y="2" width="95" height="7"/><rect class="ae-b" x="162" y="69" width="93" height="7"/><rect class="ae-b" x="196" y="135" width="59" height="7"/></svg><span class="logo-txt"><span>ALTO ESPACIO</span><small>HÁBITAT</small></span></a>
+    <p>Guadalajara, Jalisco · <button type="button" id="privBtn">Aviso de privacidad</button></p>
+    <p class="legal">Las imágenes son ilustrativas. Precios en moneda nacional, sujetos a cambio y disponibilidad sin previo aviso. Consulte si el precio incluye IVA y las formas de pago vigentes.</p>
+  </div>
+</footer>
+
+<a class="wa-float wa-link" data-msg="general" href="#contacto" target="_blank" rel="noopener" aria-label="Contáctenos por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.1-1.3A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .8.8-2.95-.2-.3a8.2 8.2 0 1 1 6.9 3.78Zm4.5-6.1c-.25-.12-1.46-.72-1.69-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.78.96-.15.17-.29.19-.54.06a6.7 6.7 0 0 1-3.32-2.9c-.25-.43.25-.4.72-1.33.08-.16.04-.3-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.48a.92.92 0 0 0-.66.31 2.8 2.8 0 0 0-.87 2.07 4.85 4.85 0 0 0 1.02 2.58 11.1 11.1 0 0 0 4.25 3.75c1.58.68 2.2.74 2.99.62.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.15-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+</a>
+
+<dialog id="privDlg" aria-labelledby="privT">
+  <div class="dlg-in">
+    <h2 id="privT">Aviso de privacidad</h2>
+    <p>[Nombre o razón social], que opera como Alto Espacio Hábitat, con domicilio en [domicilio, Guadalajara, Jalisco], es responsable del tratamiento de sus datos personales.</p>
+    <h3>Datos que tratamos</h3>
+    <p>Nombre, teléfono, correo electrónico si nos lo da, el tipo de inmueble que busca y los mensajes que intercambiemos. No pedimos datos personales sensibles.</p>
+    <h3>Para qué los usamos</h3>
+    <p>Para enviarle información de los inmuebles que pidió, agendar visitas y dar seguimiento a un apartado o compra. Con su permiso, también para enviarle novedades de otros inmuebles; puede negarse escribiendo "NO SECUNDARIAS".</p>
+    <h3>Con quién los compartimos</h3>
+    <p>Con el desarrollador o propietario del inmueble solo cuando usted pida una cotización, visita o apartado. No vendemos sus datos.</p>
+    <h3>Sus derechos</h3>
+    <p>Responda "BAJA" por WhatsApp para no recibir más mensajes. Para acceder, rectificar, cancelar u oponerse al uso de sus datos, escriba a [correo]. Respondemos en un máximo de 20 días hábiles.</p>
+    <p>Última actualización: [fecha].</p>
+    <form method="dialog"><button class="btn" type="submit">Cerrar</button></form>
+  </div>
+</dialog>
+
+<script src="comun.js"></script>
+<script src="medico.js"></script>
+</body>
+</html>
