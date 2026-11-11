@@ -191,8 +191,8 @@
       b.innerHTML = `<div class="stage top crop">${ofiCrop(mcUnit)}</div><p class="caption">Planta oficial ambientada. La línea punteada marca el ${unitLabel(mcInv())}; la distribución es un ejemplo.</p>`;
     } else if (mcMode === "angles") {
       const angleImage = shot => {
-        if (mcFloor.plan === "p22" && mcUnit.n === "17" && shot === "a3") {
-          return "media/consultorio-17-a3.jpg";
+        if (mcFloor.plan === "p22" && mcUnit.n === "17") {
+          return `media/consultorio-17-${shot}.jpg`;
         }
         return sf(sh, shot);
       };
