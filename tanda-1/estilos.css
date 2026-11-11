@@ -650,7 +650,20 @@ body {
   background-size: var(--panel) 530px, var(--panel) 530px, var(--panel) 530px, var(--panel) 530px, 180px 180px;
 }
 .axes-in span, .axes-in span:last-child { border-color: transparent; }
-.contact { background: var(--deep); }
+.contact {
+  --deep: #494946;
+  --on-deep: #f4f3ef;
+  --ink: #f4f3ef;
+  --surface: #30302e;
+  --muted: #deddd8;
+  --line: #979791;
+  background: var(--deep);
+  color-scheme: dark;
+}
+.contact .opt { border-color: var(--line); }
+.contact .opt:hover, .contact .opt:has(input:checked) { border-color: var(--ink); }
+.contact .opt:has(input:checked) { background: rgb(255 255 255 / 8%); }
+.contact .wa-num { color: var(--muted); }
 .contact .lede, .contact .eyebrow { color: var(--muted); }
 .contact .btn { background: var(--ink); color: var(--surface); }
 .contact .btn:hover { background: var(--surface); color: var(--ink); }
@@ -669,4 +682,5 @@ body {
 .home .unit-art .lt { fill: var(--ink); opacity: 0; transition: opacity .6s; }
 .home .ucard:is(:hover,:focus-visible) .lt { opacity: .65 !important; }
 @media (max-width: 760px) { .home .unit-art { height: 150px; } }
+
 
