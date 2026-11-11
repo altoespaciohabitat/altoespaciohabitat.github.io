@@ -176,7 +176,7 @@
   // Luna
   paths.push(stroke(svg, "M1100 74a22 22 0 1 1 0.1 0", 0.92, 1, "thin"));
   // Cada tarjeta conserva los trazos y luces animados de su edificio.
-  $(".home .ucard").forEach(card => {
+  document.querySelectorAll(".home .ucard").forEach(card => {
     const art = card.querySelector(".unit-art");
     svg.querySelectorAll(".b-" + card.dataset.b).forEach(node => art.appendChild(node));
   });
