@@ -659,3 +659,14 @@ body {
 .rec3d-in .btn { background: #30302e; color: #fafaf7; border-color: #fafaf7; }
 :focus-visible { outline: 2px solid currentColor; }
 
+
+/* Ilustraciones de las unidades de negocio */
+.axes-in b, .home .scene-box[hidden] { display: none; }
+.home { height: auto; min-height: calc(100svh - var(--nav)); grid-template-rows: auto 1fr; }
+.home > .wrap:last-child { align-self: end; }
+.home .unit-art { grid-column: 1 / -1; grid-row: 1; width: 100%; height: clamp(128px, 25vh, 260px); display: block; }
+.home .ucard .circ { grid-row: 2 / span 3; }
+.home .unit-art .lt { fill: var(--ink); opacity: 0; transition: opacity .6s; }
+.home .ucard:is(:hover,:focus-visible) .lt { opacity: .65 !important; }
+@media (max-width: 760px) { .home .unit-art { height: 150px; } }
+

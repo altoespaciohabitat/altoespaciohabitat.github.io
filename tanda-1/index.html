@@ -34,7 +34,7 @@
       <h1 class="brand"><span class="brand-main">ALTO ESPACIO</span><span class="brand-sub">HÁBITAT</span></h1>
       <p class="lede">Asesoría inmobiliaria en Guadalajara: consultorios médicos, vivienda horizontal y vertical. Lo acompañamos desde la primera visita hasta la firma de la escritura.</p>
     </div>
-    <div class="scene-box">
+    <div class="scene-box" hidden>
       <div class="scene" id="scene">
         <svg id="cityScene" class="dr" viewBox="0 0 1200 500" role="img" aria-label="Una casa, un edificio de departamentos y una torre médica de noche, con las ventanas encendidas"></svg>
       </div>
@@ -42,18 +42,21 @@
     <div class="wrap">
       <nav class="units" aria-label="Unidades de negocio">
       <a class="ucard" href="medico.html" data-b="tower">
+        <svg class="unit-art dr" viewBox="675 60 460 450" aria-hidden="true" focusable="false"></svg>
         <span class="u-tag">Consultorios médicos</span>
         <span class="u-title">Médico</span>
         <span class="u-sub">Médica Country · 32 consultorios disponibles</span>
         <span class="circ" aria-hidden="true">↗</span>
       </a>
       <a class="ucard" href="horizontal.html" data-b="house">
+        <svg class="unit-art dr" viewBox="55 60 460 450" aria-hidden="true" focusable="false"></svg>
         <span class="u-tag">Terrenos y casas</span>
         <span class="u-title">Horizontal</span>
         <span class="u-sub">Terrenos para construir y casas listas para habitar</span>
         <span class="circ" aria-hidden="true">↗</span>
       </a>
       <a class="ucard" href="vertical.html" data-b="apts">
+        <svg class="unit-art dr" viewBox="390 60 460 450" aria-hidden="true" focusable="false"></svg>
         <span class="u-tag">Departamentos</span>
         <span class="u-title">Vertical</span>
         <span class="u-sub">Departamentos para habitar o invertir</span>
@@ -172,6 +175,11 @@
   paths.push(...seq(svg, tag(tower, "tower"), 0.6, 0.97, 3));
   // Luna
   paths.push(stroke(svg, "M1100 74a22 22 0 1 1 0.1 0", 0.92, 1, "thin"));
+  // Cada tarjeta conserva los trazos y luces animados de su edificio.
+  $(".home .ucard").forEach(card => {
+    const art = card.querySelector(".unit-art");
+    svg.querySelectorAll(".b-" + card.dataset.b).forEach(node => art.appendChild(node));
+  });
   render(paths, 0);
 
   // Las luces se encienden de a poco y algunas cambian de vez en cuando
@@ -189,13 +197,6 @@
   }
   play(paths, 3400, nightfall);
 
-  // Al pasar por una unidad de negocio, se ilumina su edificio
-  $$(".home .ucard").forEach(a => {
-    const f = () => { scene.dataset.focus = a.dataset.b; };
-    const u = () => { delete scene.dataset.focus; };
-    a.addEventListener("mouseenter", f); a.addEventListener("focus", f);
-    a.addEventListener("mouseleave", u); a.addEventListener("blur", u);
-  });
 })();
 </script>
 
