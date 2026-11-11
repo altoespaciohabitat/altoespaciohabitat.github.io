@@ -14,13 +14,15 @@
 <link rel="stylesheet" href="estilos.css">
 <style>
 #mc-gallery {min-width:0;width:100%;align-self:center}
-.mc-slides {display:grid;width:100%;align-items:center}
+.mc-slides {display:grid;grid-template-columns:minmax(0,1fr);width:100%;align-items:center}
+.mc-slide > .caption {margin-inline:auto;text-align:center}
 .mc-slide {grid-area:1/1;margin:0;min-width:0}
 .mc-slide[hidden] {display:block;visibility:hidden;pointer-events:none}
-.mc-sheet {display:grid;gap:.6rem;color:var(--ink)}
+.mc-sheet {width:min(100%,394px);justify-self:center;text-align:center;grid-template-columns:minmax(0,1fr);justify-items:center;overflow-wrap:anywhere;display:grid;gap:.6rem;color:var(--ink)}
 .mc-sheet h2 {font-size:clamp(1.35rem,2.5vw,2rem)}
 .mc-sheet p {line-height:1.4}
-.mc-sheet img {width:100%;height:auto;max-height:240px;object-fit:contain}
+.mc-sheet .eyebrow {justify-content:center}
+.mc-sheet img {width:100%;height:auto;display:block;object-fit:contain}
 .mc-sheet small,.mc-sheet .caption {color:var(--muted);font-size:.72rem;line-height:1.4}
 .mc-brochure {font-size:.8rem;text-underline-offset:.25em}
 .mc-slide-controls {display:flex;align-items:center;justify-content:center;gap:.65rem;color:var(--ink)}
@@ -361,7 +363,7 @@
     clearInterval(timer);
     toggle.textContent = playing ? 'Ⅱ' : '▷';
     toggle.setAttribute('aria-label', playing ? 'Pausar presentación' : 'Reanudar presentación');
-    if (playing && !document.hidden && !slides[index].contains(document.activeElement)) timer = setInterval(() => show(1), 3000);
+    if (playing && !document.hidden && !slides[index].contains(document.activeElement)) timer = setInterval(() => show(1), 6000);
   }
   gallery.querySelectorAll('[data-step]').forEach(button => button.addEventListener('click', () => {
     show(Number(button.dataset.step)); schedule();
