@@ -190,8 +190,14 @@
     if (mcMode === "top") {
       b.innerHTML = `<div class="stage top crop">${ofiCrop(mcUnit)}</div><p class="caption">Planta oficial ambientada. La línea punteada marca el ${unitLabel(mcInv())}; la distribución es un ejemplo.</p>`;
     } else if (mcMode === "angles") {
+      const angleImage = shot => {
+        if (mcFloor.plan === "p22" && mcUnit.n === "17" && shot === "a3") {
+          return "media/consultorio-17-a3.jpg";
+        }
+        return sf(sh, shot);
+      };
       if (!o.ang.includes(mcShot)) mcShot = o.ang[0];
-      b.innerHTML = `<div class="stage"><img src="${sf(sh, mcShot)}" alt="${o.name}"></div><div class="thumbs">${o.ang.map(s => `<button type="button" aria-pressed="${s === mcShot}" data-s="${s}" aria-label="Ángulo ${s.slice(1)}"><img src="${sf(sh, s)}" alt=""></button>`).join("")}</div>${cap}</p>`;
+      b.innerHTML = `<div class="stage"><img src="${angleImage(mcShot)}" alt="${o.name}"></div><div class="thumbs">${o.ang.map(s => `<button type="button" aria-pressed="${s === mcShot}" data-s="${s}" aria-label="Ángulo ${s.slice(1)}"><img src="${angleImage(s)}" alt=""></button>`).join("")}</div>${cap}</p>`;
       $$("#mcModeBody .thumbs button").forEach(x => x.onclick = () => { mcShot = x.dataset.s; mcRenderModes(); });
     } else if (mcMode === "tour" && recOf(mcUnit)) {
       const r = recOf(mcUnit), same = r.base !== mcUnit.n;
