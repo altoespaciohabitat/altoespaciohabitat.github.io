@@ -684,3 +684,14 @@ body {
 @media (max-width: 760px) { .home .unit-art { height: 150px; } }
 
 
+
+.podcast-cover { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:clamp(24px,5vw,80px); min-height:calc(100svh - var(--nav)); padding-block:clamp(48px,8vw,110px); }
+.podcast-cover h1 { font-size:clamp(2rem,4vw,4.8rem); font-weight:300; line-height:1.12; text-transform:uppercase; }
+.podcast-cover figure { margin:0; padding:clamp(30px,4vw,74px) 16px; border:1px solid var(--ink); text-align:center; }
+.podcast-cover svg { width:min(56%,290px); display:block; margin:auto; }
+.podcast-cover figcaption { font-size:clamp(1.75rem,3vw,3.5rem); font-weight:300; margin-top:24px; }
+@media (max-width:760px) {
+  .nav-in { gap:6px; }
+  .links a { padding-inline:clamp(3px,1vw,8px); letter-spacing:.03em; }
+  .podcast-cover { grid-template-columns:1fr; min-height:0; }
+}
