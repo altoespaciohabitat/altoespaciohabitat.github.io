@@ -695,3 +695,14 @@ body {
   .links a { padding-inline:clamp(3px,1vw,8px); letter-spacing:.03em; }
   .podcast-cover { grid-template-columns:1fr; min-height:0; }
 }
+
+.links a[href="espacio-medicus.html"] {
+  background-color: #111110;
+  color: #f1f0ed;
+}
+.links a[href="espacio-medicus.html"] i { opacity: .84; }
+.links a[href="espacio-medicus.html"]::after { background-color: currentColor; }
+.links a[href="espacio-medicus.html"]:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: -4px;
+}
