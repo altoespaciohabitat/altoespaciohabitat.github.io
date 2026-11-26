@@ -39,6 +39,9 @@ button,a{font:inherit;color:inherit}
 .derecha{position:fixed;right:max(12px,env(safe-area-inset-right,0px));top:calc(12px + env(safe-area-inset-top,0px));z-index:2;display:flex;flex-direction:column;align-items:stretch;gap:8px}
 .mini{padding:10px}
 .derecha .pill{text-align:center;display:block}
+.derecha .agendar{font-size:13px;font-weight:500;padding:12px 14px;letter-spacing:.08em;animation:latido 2.4s ease-out infinite}
+@keyframes latido{0%{box-shadow:0 0 0 0 rgba(245,245,243,.6)}70%{box-shadow:0 0 0 12px rgba(245,245,243,0)}100%{box-shadow:0 0 0 0 rgba(245,245,243,0)}}
+@media (prefers-reduced-motion:reduce){.derecha .agendar{animation:none}}
 .mini svg{display:block;width:180px;height:auto}
 .help{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:2;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#fff;text-shadow:0 1px 3px rgb(0 0 0 / .6);white-space:nowrap}
 .joy{position:fixed;left:calc(24px + env(safe-area-inset-left,0px));bottom:calc(30px + env(safe-area-inset-bottom,0px));width:120px;height:120px;border-radius:50%;background:rgb(255 255 255 / .12);border:1px solid rgb(255 255 255 / .45);z-index:3;touch-action:none}
@@ -107,7 +110,7 @@ button,a{font:inherit;color:inherit}
 <div class="card mini" aria-label="Plano con su posición">
   <svg id="plan" role="img" aria-label="Plano del consultorio"></svg>
 </div>
-<a class="pill solid agendar" href="#" target="_blank" rel="noopener">Agendar cita</a>
+<a class="pill solid agendar" href="#" target="_blank" rel="noopener">📅 Agendar cita</a>
 </div>
 <script>
 /* Botón "Agendar cita": con el código del doctor abre su página personal; sin código, WhatsApp. */
