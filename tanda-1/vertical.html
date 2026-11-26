@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap">
-<link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="estilos.css?v=20261126-visual">
 </head>
 <body>
 <!-- Ejes del plano (decorativos) -->
@@ -20,7 +20,8 @@
 <header class="nav">
   <div class="wrap nav-in">
     <a class="logo" href="index.html" aria-label="Alto Espacio Hábitat, inicio"><svg class="ae-mark" viewBox="0 0 260 145" aria-hidden="true" focusable="false"><path class="ae-l" d="M95 6 L6 140" pathLength="1"/><path class="ae-r" d="M95 6 L176 140" pathLength="1"/><rect class="ae-b" x="160" y="2" width="95" height="7"/><rect class="ae-b" x="162" y="69" width="93" height="7"/><rect class="ae-b" x="196" y="135" width="59" height="7"/></svg><span class="logo-txt"><span>ALTO ESPACIO</span><small>HÁBITAT</small></span></a>
-    <nav class="links" aria-label="Unidades de negocio">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="business-menu">Menú ☰</button>
+    <nav id="business-menu" class="links" aria-label="Unidades de negocio">
       <a href="medico.html"><i>01</i>Médico</a>
       <a href="horizontal.html"><i>02</i>Horizontal</a>
       <a href="vertical.html" aria-current="page"><i>03</i>Vertical</a>
@@ -163,5 +164,24 @@
 </dialog>
 
 <script src="comun.js"></script>
+<script>
+/* Navegación adaptable; conserva los enlaces y logotipos originales. */
+(() => {
+  const nav = document.querySelector('.nav'), links = nav.querySelector('.links');
+  const toggle = document.querySelector('.menu-toggle');
+  const mobile = matchMedia('(max-width: 1080px)');
+  const names = ['Consultorios médicos', 'Casas y terrenos', 'Departamentos', 'Espacio Medicus'];
+  const anchors = [...links.querySelectorAll('a')];
+  const labels = anchors.map(a => a.innerHTML);
+  function close(focus = false) { nav.classList.remove('menu-open'); toggle.setAttribute('aria-expanded','false'); toggle.textContent = 'Menú ☰'; if(focus) toggle.focus(); }
+  function sync() { close(); anchors.forEach((a,i) => { a.innerHTML = mobile.matches ? '<i>0'+(i+1)+'</i><span>'+names[i]+'</span>' : labels[i]; }); }
+  toggle.addEventListener('click', () => { const open = !nav.classList.contains('menu-open'); nav.classList.toggle('menu-open',open); toggle.setAttribute('aria-expanded',String(open)); toggle.textContent = open ? 'Cerrar ×' : 'Menú ☰'; });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape' && nav.classList.contains('menu-open')) close(true); });
+  document.addEventListener('click', e => { if(!nav.contains(e.target)) close(); });
+  nav.addEventListener('focusout', () => { setTimeout(() => { if(!nav.contains(document.activeElement)) close(); },0); });
+  anchors.forEach(a => a.addEventListener('click',() => close()));
+  mobile.addEventListener('change',sync); sync();
+})();
+</script>
 </body>
 </html>
