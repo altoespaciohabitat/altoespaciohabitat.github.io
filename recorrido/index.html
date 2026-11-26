@@ -36,7 +36,9 @@ button,a{font:inherit;color:inherit}
 .pill:hover{border-color:var(--fg)}
 .pill[aria-pressed="true"]{background:var(--fg);border-color:var(--fg);color:var(--accent-ink)}
 .pill.solid{background:var(--fg);color:var(--accent-ink);border-color:var(--fg)}
-.mini{position:fixed;right:max(12px,env(safe-area-inset-right,0px));top:calc(12px + env(safe-area-inset-top,0px));z-index:2;padding:10px}
+.derecha{position:fixed;right:max(12px,env(safe-area-inset-right,0px));top:calc(12px + env(safe-area-inset-top,0px));z-index:2;display:flex;flex-direction:column;align-items:stretch;gap:8px}
+.mini{padding:10px}
+.derecha .pill{text-align:center;display:block}
 .mini svg{display:block;width:180px;height:auto}
 .help{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:2;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#fff;text-shadow:0 1px 3px rgb(0 0 0 / .6);white-space:nowrap}
 .joy{position:fixed;left:calc(24px + env(safe-area-inset-left,0px));bottom:calc(30px + env(safe-area-inset-bottom,0px));width:120px;height:120px;border-radius:50%;background:rgb(255 255 255 / .12);border:1px solid rgb(255 255 255 / .45);z-index:3;touch-action:none}
@@ -101,9 +103,22 @@ button,a{font:inherit;color:inherit}
   </div>
 </div>
 
+<div class="derecha">
 <div class="card mini" aria-label="Plano con su posición">
   <svg id="plan" role="img" aria-label="Plano del consultorio"></svg>
 </div>
+<a class="pill solid agendar" href="#" target="_blank" rel="noopener">Agendar cita</a>
+</div>
+<script>
+/* Botón "Agendar cita": con el código del doctor abre su página personal; sin código, WhatsApp. */
+(function(){
+  var q = location.search.slice(1), h = location.hash.slice(1);
+  var c = /^[A-Za-z0-9]{6}$/.test(q) ? q : (/^[A-Za-z0-9]{6}$/.test(h) ? h : '');
+  var url = c ? 'https://altoespaciohabitat.github.io/cita/?' + c
+    : 'https://wa.me/525612422195?text=' + encodeURIComponent('Hola, recorrí en 3D el consultorio de Médica Country y quiero agendar una visita.');
+  [].forEach.call(document.querySelectorAll('.agendar'), function(a){ a.href = url; });
+})();
+</script>
 
 <div class="help">W A S D o flechas para caminar · arrastre para mirar</div>
 <div class="joy" id="joy" aria-label="Joystick para caminar"><i id="knob"></i></div>
