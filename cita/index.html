@@ -127,7 +127,7 @@
   function lugarPorId(id) { for (var i = 0; i < LUGARES.length; i++) if (LUGARES[i].id === id) return LUGARES[i]; return null; }
   var MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
   var DIAS = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
-  var token = new URLSearchParams(location.search).get('t') || '';
+  var q = location.search.slice(1), token = new URLSearchParams(location.search).get('t') || (/^[A-Za-z0-9]{6}$/.test(q) ? q : ''); // link largo (?t=) o corto (?ABC123)
   var E = { datos: null, mes: null, lugar: null, fecha: null, hora: null, aviso: '' };
   var $ = function (id) { return document.getElementById(id); };
   var ICO_OK = '<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
