@@ -30,7 +30,7 @@
 .mc-slide-controls button:hover,.mc-slide-controls button:focus-visible {background:var(--ink);color:var(--paper)}
 .mc-slide-controls span {font-size:.7rem;letter-spacing:.12em}
 </style>
-</head>
+<link rel="stylesheet" href="proyectos-especiales.css"></head>
 <body>
 <!-- Ejes del plano (decorativos) -->
 <div class="axes" aria-hidden="true"><div class="axes-in"><span><b>A</b></span><span><b>B</b></span><span><b>C</b></span><span><b>D</b></span></div></div>
@@ -44,7 +44,7 @@
       <a href="horizontal.html"><i>02</i>Horizontal</a>
       <a href="vertical.html"><i>03</i>Vertical</a>
       <a href="espacio-medicus.html"><i>04</i>Espacio Medicus</a>
-    </nav>
+    <a class="pe-nav" href="proyectos-especiales.html"><i>05</i>Proyectos especiales</a></nav>
     <a class="btn solid wa-link wa-top" data-msg="general" href="#contacto" target="_blank" rel="noopener">WhatsApp</a>
   </div>
 </header>
@@ -386,7 +386,7 @@
   const nav = document.querySelector('.nav'), links = nav.querySelector('.links');
   const toggle = document.querySelector('.menu-toggle');
   const mobile = matchMedia('(max-width: 1080px)');
-  const names = ['Consultorios médicos', 'Casas y terrenos', 'Departamentos', 'Espacio Medicus'];
+  const names = ['Consultorios médicos', 'Casas y terrenos', 'Departamentos', 'Espacio Medicus', 'Proyectos especiales'];
   const anchors = [...links.querySelectorAll('a')];
   const labels = anchors.map(a => a.innerHTML);
   function close(focus = false) { nav.classList.remove('menu-open'); toggle.setAttribute('aria-expanded','false'); toggle.textContent = 'Menú ☰'; if(focus) toggle.focus(); }

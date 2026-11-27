@@ -1,0 +1,31 @@
+<!doctype html><html lang="es-MX"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Proyectos especiales | Alto Espacio Hábitat</title><link rel="stylesheet" href="estilos.css?v=20261126-visual"><link rel="stylesheet" href="proyectos-especiales.css"></head><body><header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="index.html" aria-label="Alto Espacio Hábitat, inicio"><svg class="ae-mark" viewBox="0 0 260 145" aria-hidden="true" focusable="false"><path class="ae-l" d="M95 6 L6 140" pathLength="1"/><path class="ae-r" d="M95 6 L176 140" pathLength="1"/><rect class="ae-b" x="160" y="2" width="95" height="7"/><rect class="ae-b" x="162" y="69" width="93" height="7"/><rect class="ae-b" x="196" y="135" width="59" height="7"/></svg><span class="logo-txt"><span>ALTO ESPACIO</span><small>HÁBITAT</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="business-menu">Menú ☰</button>
+    <nav id="business-menu" class="links" aria-label="Unidades de negocio">
+      <a href="medico.html"><i>01</i>Médico</a>
+      <a href="horizontal.html"><i>02</i>Horizontal</a>
+      <a href="vertical.html"><i>03</i>Vertical</a>
+      <a href="espacio-medicus.html"><i>04</i>Espacio Medicus</a>
+    <a aria-current="page" class="pe-nav" href="proyectos-especiales.html"><i>05</i>Proyectos especiales</a></nav>
+    <a class="btn solid wa-link wa-top" data-msg="general" href="index.html#contacto" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</header><main class="pe-page"><p class="pe-crumb"><a href="index.html">Inicio</a>　/　Proyectos especiales</p><section class="pe-hero"><div><small>VISUALIZACIÓN PARA DESARROLLADORAS</small><h1>Proyectos especiales</h1><p>Convertimos los planos de tu desarrollo en una maqueta digital que tus clientes pueden recorrer. Desde la fachada hasta el interior, cada vista les ayuda a entender la distribución, los materiales y la luz.</p><div class="pe-actions"><a class="pe-button" href="maqueta-4b/">Explorar la maqueta <span aria-hidden="true">→</span></a><a class="pe-button pe-gold" href="https://wa.me/525612422195?text=Hola%2C%20Alto%20Espacio.%20Me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20Proyectos%20especiales%20y%20cotizar%20una%20maqueta%20digital%20interactiva%20para%20mi%20desarrollo." target="_blank" rel="noopener">Cotizar mi maqueta por WhatsApp ↗</a></div></div><figure><img src="maqueta-4b/vista-sala.jpg" alt="Sala abierta a la terraza del departamento de muestra"><figcaption>Departamento 4B · Sala y terraza</figcaption></figure></section><section class="pe-sample"><h2>Departamento de muestra</h2><p>Así podría presentarse tu proyecto. Estas imágenes forman parte del recorrido interactivo del departamento 4B.</p><div class="pe-gallery"><figure><img loading="lazy" src="maqueta-4b/fachada.jpg" alt="Vista exterior del edificio de muestra"><figcaption>Fachada</figcaption></figure><figure><img loading="lazy" src="maqueta-4b/vista-recamara.jpg" alt="Recámara con cabecero de madera"><figcaption>Recámara principal</figcaption></figure><figure><img loading="lazy" src="maqueta-4b/vista-terraza.jpg" alt="Terraza con vista al jardín"><figcaption>Terraza</figcaption></figure></div></section></main><script src="comun.js"></script><script>
+/* Navegación adaptable; conserva los enlaces y logotipos originales. */
+(() => {
+  const nav = document.querySelector('.nav'), links = nav.querySelector('.links');
+  const toggle = document.querySelector('.menu-toggle');
+  const mobile = matchMedia('(max-width: 1080px)');
+  const names = ['Consultorios médicos', 'Casas y terrenos', 'Departamentos', 'Espacio Medicus', 'Proyectos especiales'];
+  const anchors = [...links.querySelectorAll('a')];
+  const labels = anchors.map(a => a.innerHTML);
+  function close(focus = false) { nav.classList.remove('menu-open'); toggle.setAttribute('aria-expanded','false'); toggle.textContent = 'Menú ☰'; if(focus) toggle.focus(); }
+  function sync() { close(); anchors.forEach((a,i) => { a.innerHTML = mobile.matches ? '<i>0'+(i+1)+'</i><span>'+names[i]+'</span>' : labels[i]; }); }
+  toggle.addEventListener('click', () => { const open = !nav.classList.contains('menu-open'); nav.classList.toggle('menu-open',open); toggle.setAttribute('aria-expanded',String(open)); toggle.textContent = open ? 'Cerrar ×' : 'Menú ☰'; });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape' && nav.classList.contains('menu-open')) close(true); });
+  document.addEventListener('click', e => { if(!nav.contains(e.target)) close(); });
+  nav.addEventListener('focusout', () => { setTimeout(() => { if(!nav.contains(document.activeElement)) close(); },0); });
+  anchors.forEach(a => a.addEventListener('click',() => close()));
+  mobile.addEventListener('change',sync); sync();
+})();
+</script></body></html>
